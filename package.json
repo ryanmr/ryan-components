@@ -11,8 +11,9 @@
     "build": "rollup -c",
     "watch": "rollup -cw",
     "dev": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -e js,ts,jsx,tsx --exec yarn run dev:build",
-    "dev:build": "yarn run build && yarn run yalc",
-    "yalc": "yalc push"
+    "dev:build": "yarn run build && yarn run yalc:push",
+    "yalc:publish": "yalc publish",
+    "yalc:push": "yalc push"
   },
   "dependencies": {},
   "devDependencies": {
