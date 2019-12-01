@@ -1,0 +1,14 @@
+{
+  "presets": [
+    ["@babel/preset-env"]
+    ["@babel/env", { "modules": false }],
+  ],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "displayName": true
+      }
+    ]
+  ]
+}
