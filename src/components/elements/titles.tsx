@@ -10,6 +10,7 @@ export const BrandTitle = styled.h1`
   font-weight: normal;
   font-family: ${props => props.theme.brandFont};
   color: #fff;
+  user-select: none;
 
   a,
   a:hover {
@@ -22,7 +23,7 @@ export const BrandTitle = styled.h1`
   }
 `;
 
-export const AnimatedHomeTitle = styled(BrandTitle)`
+export const AnimatedBrandTitle = styled(BrandTitle)`
   opacity: 0;
   transform: translateY(-10px);
   animation: 0.75s linear 0s 1 ${FadeInAnimationY};

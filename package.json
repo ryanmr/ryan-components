@@ -11,7 +11,7 @@
     "build": "rollup -c",
     "watch": "rollup -cw",
     "dev": "nodemon --ignore dist/ --ignore node_modules/ --watch src/ -e js,ts,jsx,tsx --exec yarn run dev:build",
-    "dev:build": "yarn run build && yarn run yalc:push",
+    "dev:build": "rimraf dist && yarn run build && yarn run yalc:push",
     "yalc:publish": "yalc publish",
     "yalc:push": "yalc push"
   },
@@ -26,6 +26,7 @@
     "nodemon": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "rimraf": "^3.0.0",
     "rollup": "^1.27.5",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-babel-minify": "^9.1.1",

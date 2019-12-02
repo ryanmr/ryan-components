@@ -73,3 +73,7 @@ Note: if `yarn dev` does not work initially, try `yalc publish` to add this pack
 This package may assume some specific fonts are available. These fonts must be provided by the _consumers_ of this package.
 
 See the [fonts documentation](docs/fonts.md) for details.
+
+### Gatsby `html.js`
+
+Please review how you might customize your `html.js` file when using this package.
