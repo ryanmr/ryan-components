@@ -1,12 +1,11 @@
 {
   "name": "@ryanrampersad/ryan-components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
     "dist"
   ],
-  "license": "MIT",
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -cw",
@@ -39,5 +38,10 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "styled-components": ">=4.4.1 <6.0.0"
-  }
+  },
+  "homepage": "https://github.com/ryanmr/ryan-components",
+  "author": {"name": "Ryan Rampersad", "email": "ryan.rampersad@gmai.com", "url": "https://ryanrampersad.com"},
+  "license": "MIT",
+  "repository": {"type": "git", "url": "https://github.com/ryanmr/ryan-components.git"},
+  "description": "styles and components for ryan rampersad sites and apps"
 }
