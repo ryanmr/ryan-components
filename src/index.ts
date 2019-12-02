@@ -31,4 +31,9 @@ export {
   FadeInAnimationY
 } from "./components/elements/keyframes";
 
+export { InternalBanner } from "./other/InternalBanner";
+
+export { Ribbon } from "./components/ribbon/Ribbon";
+export { RibbonGenerator } from "./components/ribbon/ribbon-generator";
+
 export { up } from "./helpers/media";

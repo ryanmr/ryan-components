@@ -1,5 +1,36 @@
+export interface RibbonGeneratorOptions {
+  /**
+   * A stretch factor
+   */
+  factor: number;
+
+  /**
+   * Transparency factor as a decimal
+   */
+  alpha: number;
+
+  /**
+   * Determines where leftside begins vertically
+   */
+  initialOffset: number;
+}
+
 export class RibbonGenerator {
-  constructor(element, options = {}) {
+  private canvas: HTMLCanvasElement;
+  private context: CanvasRenderingContext2D;
+  private pixelRatio: number;
+  private width: number;
+  private height: number;
+
+  private _animator: number;
+
+  private options: RibbonGeneratorOptions = {
+    factor: 120,
+    alpha: 0.5,
+    initialOffset: 0.7,
+  };
+
+  constructor(element: HTMLCanvasElement, options: Partial<RibbonGeneratorOptions> = {}) {
     this.canvas = element;
     this.context = element.getContext("2d");
     this.pixelRatio = window.devicePixelRatio || 1;
@@ -11,19 +42,13 @@ export class RibbonGenerator {
 
     this.context.scale(this.pixelRatio, this.pixelRatio);
 
-    const defaultOptions = {
-      factor: 120,
-      alpha: 0.5,
-      initialOffset: 0.7,
-    };
-
-    this.options = { ...defaultOptions, ...options };
+    this.options = { ...this.options, ...options };
     this.context.globalAlpha = this.options.alpha;
   }
 
   _calculateY(y) {
     var t = y + (Math.random() * 2 - 1.2) * this.options.factor;
-    return t > this.options.height || t < this.options.factor
+    return t < this.options.factor
       ? this._calculateY(y)
       : t;
   }
@@ -72,10 +97,9 @@ export class RibbonGenerator {
     return colors;
   }
 
-  generate(segments, colors) {
-    var self = this;
-    segments = segments || this.getSegments();
-    colors = colors || this.getColors(segments.length);
+  generate() {
+    const segments = this.getSegments();
+    const colors = this.getColors(segments.length);
     var counter = 0;
 
     var draw = () => {
@@ -93,7 +117,7 @@ export class RibbonGenerator {
         segment.bottom.y += next_y;
         diff.push(segment);
       }
-      self._draw(diff, colors);
+      this._draw(diff, colors);
     };
 
     var redraw = () => {
@@ -136,8 +160,6 @@ export class RibbonGenerator {
   }
 
   terminate() {
-    if (this._animator) {
-      cancelAnimationFrame(this._animator);
-    }
+    this._animator && cancelAnimationFrame(this._animator);
   }
 }
