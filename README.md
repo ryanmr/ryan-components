@@ -7,17 +7,14 @@ This is a package that contains many common styles and components for sites and 
 This package is primarily developed with [Gatsby](https://www.gatsbyjs.org/) _consumers_ in mind. Any environment suitable to host react components and styled components should also work.
 
 ![npm (scoped)](https://img.shields.io/npm/v/@ryanrampersad/ryan-components)
-
 ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/min/@ryanrampersad/ryan-components)
-
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/ryanmr/ryan-components)
+![GitHub](https://img.shields.io/github/license/ryanmr/ryan-components)
 
 <!-- ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ryanmr/ryan-components/Node.js%20Package) -->
 
 <!-- ![npm](https://img.shields.io/npm/dt/@ryanrampersad/ryan-components) -->
 
-
-![GitHub](https://img.shields.io/github/license/ryanmr/ryan-components)
 
 ---
 
@@ -38,6 +35,8 @@ To use this package as a _consumer_:
 ```bash
 yarn add @ryanrampersad/ryan-components
 ```
+
+[via npm](https://www.npmjs.com/package/@ryanrampersad/ryan-components)
 
 ### Example
 
