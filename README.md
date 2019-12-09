@@ -93,3 +93,6 @@ See the [fonts documentation](docs/fonts.md) for details.
 ### Gatsby `html.js`
 
 Please review how you might customize your `html.js` file when using this package.
+
+See the [Gatsby `html.js` documentation](docs/gatsby-html.md).
+
